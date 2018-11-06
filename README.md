@@ -4,12 +4,20 @@
 
 base58 encode decode without buffer;  
 input string out string;  
-suport browser;
+suport browser;  
+use utf-8;  
+因为是UTF-8编码，所以支持中文;
 
 ## Installation
 
 ```shell
 npm install base58-string
+```
+
+## CDN
+```html
+<!-- import JavaScript -->
+<script src="https://unpkg.com/base58-string/index.cdn.js"></script>
 ```
 
 ## Usage

@@ -2,8 +2,9 @@
  * @Author: neo
  * @Date: 2018-11-05 13:09:50
  * @LastEditors: neo
- * @LastEditTime: 2018-11-06 18:26:20
+ * @LastEditTime: 2018-11-06 18:37:18
  */
+(function() {
 const 
 ALPHABET = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',
 BASE = 58;
@@ -129,6 +130,7 @@ function encode(str) {
 		})
 		.join('');
 }
+
 function decode(string) {
 	if (typeof string !== 'string') {
 		throw new Error('expect string');
@@ -155,12 +157,10 @@ function decode(string) {
 	}
 	for (i = 0; string[i] === '1' && i < string.length - 1; i++) bytes.push(0);
 	return bytesToString(bytes.reverse());
-	// return bytes.reverse();
 }
 
-module.exports = {
-	encode,
-	decode,
-};
-
-module.exports.default = module.exports;
+bs = {};
+bs.encode = encode;
+bs.decode = decode;
+return bs;
+})();
