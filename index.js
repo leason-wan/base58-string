@@ -148,6 +148,27 @@ function decode(string) {
 	return bytesToString(bytes.reverse());
 }
 
+function ToUTF8(str) {
+	var result = new Array();
+
+	var k = 0;
+	for (var i = 0; i < str.length; i++) {
+			var j = encodeURI(str[i]);
+			if (j.length==1) {
+					// 未转换的字符
+					result[k++] = j.charCodeAt(0);
+			} else {
+					// 转换成%XX形式的字符
+					var bytes = j.split("%");
+					for (var l = 1; l < bytes.length; l++) {
+							result[k++] = parseInt("0x" + bytes[l]);
+					}
+			}
+	}
+
+	return result;
+}
+
 module.exports = {
 	encode,
 	decode
