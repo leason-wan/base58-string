@@ -1,0 +1,10 @@
+{
+	"name": "base58-string",
+	"version": "0.0.2",
+	"description": "base58 no buffer, input string out string, suport browser",
+	"main": "index.js",
+	"author": "fadeneo",
+	"license": "MIT",
+	"dependencies": {},
+	"devDependencies": {}
+}
